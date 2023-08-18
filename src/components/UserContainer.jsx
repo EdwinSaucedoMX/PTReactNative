@@ -25,7 +25,7 @@ export default function UserContainer() {
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Lista de Usuarios</Text>
-                <FlatList data={users} renderItem={({user}) => <UserCard name={user.name} email={user.email}/>} keyExtractor={(user) =>  user.id}/>
+                {users.length > 0 && <FlatList data={users} renderItem={({item}) => <UserCard name={item?.name} email={item?.email}/>} keyExtractor={(item) =>  item.id}/>}
             {/* <ScrollView style={styles.scrollView}>
                 <Text>A</Text>
                 <Text>b</Text>
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight,
         paddingBottom: StatusBar.currentHeight,
         width: '100%',
+        padding: 15,
     },
     scrollView: {
         flex: 1,

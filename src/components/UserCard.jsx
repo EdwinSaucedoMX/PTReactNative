@@ -4,11 +4,11 @@ import { Icon, ListItem } from 'react-native-elements'
 export default function UserCard({ name, email }) {
     return (
         <View style={styles.userContainer}>
-            <ListItem style={styles.extended}>
+            <ListItem style={[styles.extended]}>
                 <Icon name='person' color={"#888"}/>
                 <Text style={[styles.extended, styles.name]}>{name}</Text>
             </ListItem>
-            <ListItem style={styles.extended}>
+            <ListItem style={[styles.extended]}>
                 <Icon name='mail' color={"#9995"} />
                 <Text style={[styles.extended, styles.email]}>{email}</Text>
             </ListItem >
@@ -27,14 +27,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#9991',
         borderRadius: 15,
         padding: 5,
-        marginHorizontal: 10,
         
 
     },
     name: {
-        color: '#888',
+        color: '#f07',
         fontWeight: '700',
 
+    },
+    first: {
+        borderRadius: 15,
+    },
+    last: {
+        borderRadius: 15,
     },
     email: {
         color: '#9997',
