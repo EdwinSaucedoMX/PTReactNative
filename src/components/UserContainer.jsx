@@ -4,7 +4,7 @@ import {
     SafeAreaView,
     ScrollView,
     StatusBar,
-    View,
+    FlatList,
 } from 'react-native';
 
 import { useState, useEffect } from 'react';
@@ -26,11 +26,15 @@ export default function UserContainer() {
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Lista de Usuarios</Text>
             <ScrollView style={styles.scrollView}>
+                <Text>A</Text>
+                <Text>b</Text>
+                <FlatList data={users} renderItem={(user) => <UserCard user={user} />} keyExtractor={(user) =>  user.id}/>
                 {
+                    
 
                     users.map((user) => {
                         return (
-                            <UserCard key={user.id} user={user}/>
+                            <UserCard key={user.id} user={user} />
                         )
                     })
 
@@ -46,13 +50,13 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: StatusBar.currentHeight,
         paddingBottom: StatusBar.currentHeight,
-        width: '90%',
+        width: '100%',
     },
     scrollView: {
         flex: 1,
         backgroundColor: 'transparent',
         width: '100%',
-        paddingVertical: 10,
+
         paddingHorizontal: 20,
     },
     title: {
