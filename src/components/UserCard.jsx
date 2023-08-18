@@ -1,16 +1,16 @@
 import { StyleSheet, View, Text, } from 'react-native';
 import { Icon, ListItem } from 'react-native-elements'
 
-export default function UserCard({ user }) {
+export default function UserCard({ name, email }) {
     return (
         <View style={styles.userContainer}>
             <ListItem style={styles.extended}>
                 <Icon name='person' color={"#888"}/>
-                <Text style={[styles.extended, styles.name]}>{user.name}</Text>
+                <Text style={[styles.extended, styles.name]}>{name}</Text>
             </ListItem>
             <ListItem style={styles.extended}>
                 <Icon name='mail' color={"#9995"} />
-                <Text style={[styles.extended, styles.email]}>{user.email}</Text>
+                <Text style={[styles.extended, styles.email]}>{email}</Text>
             </ListItem >
         </View>
     )
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#9991',
         borderRadius: 15,
         padding: 5,
+        marginHorizontal: 10,
         
 
     },

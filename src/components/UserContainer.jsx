@@ -25,10 +25,10 @@ export default function UserContainer() {
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Lista de Usuarios</Text>
-            <ScrollView style={styles.scrollView}>
+                <FlatList data={users} renderItem={({user}) => <UserCard name={user.name} email={user.email}/>} keyExtractor={(user) =>  user.id}/>
+            {/* <ScrollView style={styles.scrollView}>
                 <Text>A</Text>
                 <Text>b</Text>
-                <FlatList data={users} renderItem={(user) => <UserCard user={user} />} keyExtractor={(user) =>  user.id}/>
                 {
                     
 
@@ -39,7 +39,7 @@ export default function UserContainer() {
                     })
 
                 }
-            </ScrollView>
+            </ScrollView> */}
         </SafeAreaView>
 
     )
